@@ -15,7 +15,7 @@ jobs:
       - name: Zip artifact for deployment
         # The 'zip' command is generally available on Ubuntu runners.
         # The -r flag is for recursive zipping of directories.
-        run: zip io_scene_rsw.zip ./src/* -r
+        run: cd src && zip -r ../io_scene_rsw.zip . && cd ..
 
       - name: Upload zip artifact
         uses: actions/upload-artifact@v4
